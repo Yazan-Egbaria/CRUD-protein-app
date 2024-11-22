@@ -1,5 +1,25 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home, Shoes, Shoe, AddShoe } from "./config/pages";
+
 export default function App() {
-  return (
-    <h1 className="bg-gray-50 text-3xl font-bold underline">Hello world!</h1>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/shoes",
+      element: <Shoes />,
+    },
+    {
+      path: "/shoe/:shoeId",
+      element: <Shoe />,
+    },
+    {
+      path: "/addShoe",
+      element: <AddShoe />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
