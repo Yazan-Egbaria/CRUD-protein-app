@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Protein = ({ id, name, price, imageUrl }) => {
   return (
     <Link
-      to={`/proteins/${id}`}
-      className="shadow-myShadow flex w-1/5 min-w-[250px] flex-col gap-4 rounded py-4"
+      to={`${id}`}
+      className="flex w-1/5 min-w-[250px] flex-col gap-4 rounded py-4 shadow-myShadow"
     >
       <div className="flex items-center justify-center">
         <img className="w-48 rounded-t" src={imageUrl} alt={name} />

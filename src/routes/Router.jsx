@@ -13,21 +13,19 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       {
-        path: "/proteins",
+        path: "proteins",
         element: <Proteins />,
-        children: [
-          {
-            path: "/proteins/:proteinId",
-            element: <ProteinPage />,
-          },
-        ],
       },
       {
-        path: "/addprotein",
+        path: "proteins/:proteinId",
+        element: <ProteinPage />,
+      },
+      {
+        path: "addprotein",
         element: <AddProtein />,
       },
     ],
