@@ -19,10 +19,12 @@ export const router = createBrowserRouter([
       {
         path: "/proteins",
         element: <Proteins />,
-      },
-      {
-        path: "/protein/:proteinId",
-        element: <ProteinPage />,
+        children: [
+          {
+            path: "/proteins/:proteinId",
+            element: <ProteinPage />,
+          },
+        ],
       },
       {
         path: "/addprotein",

@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Protein = ({ name, price, imageUrl }) => {
+const Protein = ({ id, name, price, imageUrl }) => {
   return (
     <Link
-      to=""
+      to={`/proteins/${id}`}
       className="shadow-myShadow flex w-1/5 min-w-[250px] flex-col gap-4 rounded py-4"
     >
-      {/* <div className="shadow-myShadow flex w-1/5 min-w-[250px] flex-col gap-4 rounded py-4"> */}
       <div className="flex items-center justify-center">
         <img className="w-48 rounded-t" src={imageUrl} alt={name} />
       </div>
@@ -18,7 +17,6 @@ const Protein = ({ name, price, imageUrl }) => {
           {price}
         </span>
       </div>
-      {/* </div> */}
     </Link>
   );
 };

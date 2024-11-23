@@ -20,3 +20,5 @@ export const uploadProteins = async () => {
 };
 
 uploadProteins();
+
+// Executed only one time to initialize a new firebase collection database
