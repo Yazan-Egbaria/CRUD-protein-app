@@ -21,7 +21,7 @@ const HeaderSection = () => {
       </div>
 
       <button className="rounded border-2 border-transparent bg-teal-500 px-4 py-2 font-bold text-white transition-all duration-300 hover:border-teal-500 hover:bg-white hover:text-teal-500 md:text-lg lg:text-xl xl:text-2xl">
-        <Link to="/shoes">Shop Protein Powders</Link>
+        <Link to="/proteins">Shop Protein Powders</Link>
       </button>
     </div>
   );
