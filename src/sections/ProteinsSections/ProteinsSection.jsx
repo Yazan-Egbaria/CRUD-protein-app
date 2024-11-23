@@ -11,11 +11,10 @@ const ProteinsSection = () => {
           <div className="h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-teal-500"></div>
         </div>
       )}
-
       <div className="mt-20 flex flex-wrap justify-center gap-4">
         {proteins && proteins.length > 0 ? (
           proteins.map((protein) => {
-            return <Protein key={protein.id} {...protein} />;
+            return <Protein key={protein.id} id={protein.id} {...protein} />;
           })
         ) : (
           <div>{error || "No proteins available"}</div>

@@ -1,3 +1,5 @@
+// Executed only one time to initialize a new firebase collection database
+
 export const proteins = [
   {
     id: 1,
