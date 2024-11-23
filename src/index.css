@@ -4,6 +4,6 @@
 
 @layer components {
   .pagePadding {
-    @apply p-4 md:p-6 lg:p-8 xl:p-12 2xl:px-16;
+    @apply px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16;
   }
 }
