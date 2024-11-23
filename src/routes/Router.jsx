@@ -1,5 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Proteins, Protein, AddProtein, RootLayout } from "../config/pages";
+import {
+  Home,
+  Proteins,
+  ProteinPage,
+  AddProtein,
+  RootLayout,
+} from "../config/pages";
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/protein/:proteinId",
-        element: <Protein />,
+        element: <ProteinPage />,
       },
       {
         path: "/addprotein",

@@ -2,9 +2,9 @@ import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 
-const FetchProteins = () => {
+const useFetchProteins = () => {
   const [proteins, setProteins] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -19,14 +19,14 @@ const FetchProteins = () => {
       } catch (error) {
         setError(error);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
     fetchProteins();
   }, []);
 
-  return { proteins, loading, error };
+  return { proteins, isLoading, error };
 };
 
-export default FetchProteins;
+export default useFetchProteins;

@@ -7,6 +7,10 @@ export default {
         "calc-100dvh-minus-64": "calc(100dvh - 64px)",
         "calc-100vh-minus-64": "calc(100vh - 64px)",
       },
+      minHeight: {
+        "min-calc-100dvh-minus-64": "calc(100dvh - 64px)",
+        "min-calc-100vh-minus-64": "calc(100vh - 64px)",
+      },
     },
   },
   plugins: [],
