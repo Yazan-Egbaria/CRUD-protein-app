@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import NavItem from "./NavItem";
 
 const Navbar = () => {
   return (
@@ -9,15 +10,11 @@ const Navbar = () => {
         </NavLink>
 
         <ul className="flex items-center justify-center gap-4">
-          <li className="text-lg">
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li className="text-lg">
-            <NavLink to="/shoes">Shoes</NavLink>
-          </li>
+          <NavItem text="Home" link="/" />
+          <NavItem text="Shoes" link="/shoes" />
         </ul>
 
-        <button className="rounded border-2 border-transparent bg-white px-2 py-1 font-bold text-teal-500 transition-all duration-300 hover:border-white hover:bg-teal-500 hover:text-white">
+        <button className="rounded border-2 border-transparent bg-white px-2 py-1 text-sm font-bold text-teal-500 transition-all duration-300 hover:border-white hover:bg-teal-500 hover:text-white sm:text-base">
           <NavLink to="/addshoe">Add Shoe</NavLink>
         </button>
       </nav>
