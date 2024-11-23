@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Shoes, Shoe, AddShoe, RootLayout } from "../config/pages";
+import { Home, Proteins, Protein, AddProtein, RootLayout } from "../config/pages";
 
 export const router = createBrowserRouter([
   {
@@ -11,16 +11,16 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/shoes",
-        element: <Shoes />,
+        path: "/proteins",
+        element: <Proteins />,
       },
       {
-        path: "/shoe/:shoeId",
-        element: <Shoe />,
+        path: "/protein/:proteinId",
+        element: <Protein />,
       },
       {
-        path: "/addShoe",
-        element: <AddShoe />,
+        path: "/addprotein",
+        element: <AddProtein />,
       },
     ],
   },
