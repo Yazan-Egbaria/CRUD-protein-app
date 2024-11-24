@@ -26,7 +26,7 @@ const useFetchProteins = () => {
     fetchProteins();
   }, []);
 
-  return { proteins, isLoading, error };
+  return { proteins, isLoading, error, setProteins };
 };
 
 export default useFetchProteins;
