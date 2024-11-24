@@ -2,11 +2,13 @@ import { useRef, useState } from "react";
 import useFetchProteins from "../../custom/useFetchProteins";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 const AddForm = () => {
   const nameRef = useRef(null);
   const imageRef = useRef(null);
   const priceRef = useRef(null);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -37,6 +39,7 @@ const AddForm = () => {
       setName("");
       setImage("");
       setPrice("");
+      navigate("/proteins");
       alert("Protein added successfully!");
     } catch (error) {
       console.error("Error adding protein: ", error);

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Protein from "../components/ProteinsPageComponents/Protein";
 import useFetchProteins from "../custom/useFetchProteins";
 import Button from "../components/ProteinsPageComponents/Button";
@@ -8,6 +8,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 const ProteinPage = () => {
   const { proteins, setProteins } = useFetchProteins();
   const { proteinId } = useParams();
+  const navigate = useNavigate();
 
   const protein = proteins?.find((p) => p.id === proteinId);
 
@@ -22,6 +23,7 @@ const ProteinPage = () => {
       setProteins((prev) => {
         prev.filter((p) => p.id !== proteinId);
       });
+      navigate("/proteins");
       alert("Item has been deleted successfully");
     } catch (err) {
       console.error("Error, could not delete item:", err);
