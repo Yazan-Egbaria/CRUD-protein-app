@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDoTCknHYiPVUC6SGhAJQ1ATfNmIcYdvKY",
+  apiKey: import.meta.env.VITE_FIREBASE_DB_API_KEY,
   authDomain: "protein-crud-app.firebaseapp.com",
   projectId: "protein-crud-app",
   storageBucket: "protein-crud-app.firebasestorage.app",

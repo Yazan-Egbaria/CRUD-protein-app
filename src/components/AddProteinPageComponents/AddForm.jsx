@@ -1,17 +1,15 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useFetchProteins from "../../custom/useFetchProteins";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import Form from "../globalComponents/Form";
 
 const AddForm = () => {
-  const nameRef = useRef(null);
-  const imageRef = useRef(null);
-  const priceRef = useRef(null);
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
-
   const { setProteins } = useFetchProteins();
 
   const handleSubmit = async (e) => {
@@ -37,6 +35,7 @@ const AddForm = () => {
       setName("");
       setImage("");
       setPrice("");
+      navigate("/proteins");
       alert("Protein added successfully!");
     } catch (error) {
       console.error("Error adding protein: ", error);
@@ -45,11 +44,7 @@ const AddForm = () => {
   };
 
   return (
-    <form
-      id="form"
-      className="flex w-full flex-col items-center justify-center gap-8"
-      onSubmit={handleSubmit}
-    >
+    <Form onSubmit={handleSubmit}>
       <div id="name" className="flex w-full flex-col gap-2 sm:w-2/6">
         <label htmlFor="name" className="w-fit font-bold">
           Protien Name:
@@ -58,7 +53,6 @@ const AddForm = () => {
           type="text"
           id="name"
           className="w-full rounded border border-gray-300 px-2 py-1 focus:outline-teal-500"
-          ref={nameRef}
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -74,7 +68,6 @@ const AddForm = () => {
           type="text"
           id="imageUrl"
           className="w-full rounded border border-gray-300 px-2 py-1 focus:outline-teal-500"
-          ref={imageRef}
           value={image}
           onChange={(e) => {
             setImage(e.target.value);
@@ -90,7 +83,6 @@ const AddForm = () => {
           type="text"
           id="price"
           className="w-full rounded border border-gray-300 px-2 py-1 focus:outline-teal-500"
-          ref={priceRef}
           value={price}
           onChange={(e) => {
             setPrice(e.target.value);
@@ -104,7 +96,7 @@ const AddForm = () => {
       >
         Add Protein
       </button>
-    </form>
+    </Form>
   );
 };
 
